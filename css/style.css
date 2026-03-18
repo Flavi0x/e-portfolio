@@ -1,0 +1,290 @@
+/* --- Global Setup & Variables (Thème Sombre Gris-Noir) --- */
+:root {
+    --font-title: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --color-primary: #BFA98D;
+    /* Couleurs pour le thème sombre (modifiées pour un ton gris-noir) */
+    --color-secondary-dark: #f9fafb;     /* Texte des titres (presque blanc) */
+    --color-secondary-medium: #d1d5db; /* Texte principal (gris clair) */
+    --color-background: #121212;       /* Fond de la page (gris très sombre/presque noir) */
+    --color-surface: #1E1E1E;          /* Fond des cartes, nav, etc. (gris foncé) */
+    --color-border: #374151;           /* Couleur des bordures */
+    --border-radius-md: 8px;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-secondary-medium);
+    margin: 0;
+    box-sizing: border-box;
+    padding-top: 70px; /* Espace pour la navbar fixe */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    color: var(--color-secondary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Navigation --- */
+.navbar {
+    background-color: var(--color-surface) !important;
+    box-shadow: var(--shadow-md);
+}
+.navbar .navbar-brand {
+    font-family: var(--font-title);
+    color: var(--color-secondary-dark) !important;
+    font-size: 1.2rem;
+}
+/* La classe navbar-dark gère la couleur des liens, mais on peut forcer */
+.navbar .nav-link {
+    font-weight: bold;
+    color: var(--color-secondary-medium) !important;
+    transition: color 0.2s ease;
+}
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--color-primary) !important;
+}
+
+/* --- Main Content Layout --- */
+main#carte {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+}
+
+/* --- Homepage Specific Styles --- */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+}
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+.hero .lead {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+.hero-cta .btn {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+}
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Portfolio Card Styles --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+.card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+.card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* --- CV Page Styles --- */
+.cv-pdf .cv-thumbnail {
+    width: 100%;
+    max-width: 200px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.cv-pdf .cv-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* --- Image Overlay Modal (pour CV) --- */
+#imageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Au-dessus de la navbar Bootstrap */
+    padding: 20px;
+    box-sizing: border-box;
+}
+#fullscreenImage {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: var(--border-radius-md);
+}
+#imageOverlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    color: var(--color-secondary-medium);
+    border-top: 1px solid var(--color-border);
+}
+.social-links a {
+    font-size: 1.8rem;
+    color: var(--color-secondary-medium);
+    margin: 0 1rem;
+    transition: color 0.2s ease;
+}
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+/* --- SURCHARGE BOOTSTRAP POUR LES BOUTONS --- */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #111827; /* Texte sombre pour un meilleur contraste sur le bouton doré */
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #a99479; /* Doré un peu plus sombre au survol */
+    border-color: #a99479;
+    color: #111827;
+}
+.btn-outline-secondary {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+.btn-outline-secondary:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #111827; /* Texte sombre pour un meilleur contraste au survol */
+    font-weight: bold;
+}
+.btn-secondary { /* Pour le bouton Drive */
+    background-color: var(--color-border);
+    border-color: var(--color-border);
+    color: var(--color-secondary-dark);
+}
+.btn-secondary:hover {
+    background-color: #4b5563; /* Gris un peu plus foncé */
+    border-color: #4b5563;
+}
+/* --- Styles pour la section Compétences --- */
+#skills .skill-icon {
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+#skills .col-md-3:hover .skill-icon {
+    transform: scale(1.2);
+}
+
+#skills h4 {
+    color: var(--color-secondary-medium);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.bg-surface {
+    background-color: var(--color-surface);
+}
+
+
+/* --- Styles pour le formulaire de contact --- */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-control {
+    background-color: var(--color-border);
+    border: 1px solid #4b5563;
+    color: var(--color-secondary-dark);
+}
+
+.form-control:focus {
+    background-color: var(--color-border);
+    border-color: var(--color-primary);
+    color: var(--color-secondary-dark);
+    box-shadow: 0 0 0 0.25rem rgba(191, 169, 141, 0.25);
+}
+
+.form-label {
+    color: var(--color-secondary-medium);
+}
+
+
+/* --- Styles pour les animations au défilement --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
