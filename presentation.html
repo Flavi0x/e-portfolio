@@ -20,13 +20,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="cv.html">Mon CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="presentation.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="presentation.html">À propos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" aria-label="Changer le thème" style="background:none; border:none; color:var(--color-secondary-medium); font-size:1.2rem; cursor:pointer;">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
                 </ul>
-                </div>
+            </div>
         </div>
     </nav>
     
@@ -39,24 +45,44 @@
                         <h2><i class="fas fa-basketball-ball me-2"></i>Mes Loisirs et mes Passions</h2>
                         <p>Mon principal loisir et ma plus grande passion est le basket. Je le pratique depuis l'âge de 5 ans et j'entraîne et coache des équipes depuis 4 ans. J'y consacre la majeure partie de mon temps libre, car cela me permet non seulement de rester actif, mais aussi de transmettre ma passion et mes connaissances à d'autres joueurs.</p>
                     </section>
+                    
                     <hr class="my-4">
+                    
                     <section id="envies">
                         <h2><i class="fas fa-plane-departure me-2"></i>Mes Envies et Projets</h2>
                         <p>Mes projets futurs sont de terminer mes études et d'intégrer une entreprise d'informatique à Roanne, car je tiens à y rester. Plus tard, j'aimerais voyager, notamment aux États-Unis, pour assister à des matchs de NBA et découvrir ses paysages variés.</p>
                     </section>
+
+                    <hr class="my-4">
+
+                    <section id="projets-github">
+                        <h2><i class="fas fa-laptop-code me-2"></i>Mes Projets Techniques</h2>
+                        <p>En dehors des cours, je passe du temps à coder, scripter et expérimenter avec différentes technologies réseaux et systèmes. Je documente mes réalisations et mes procédures techniques sous forme de "Playbooks" interactifs accessibles en ligne. N'hésitez pas à les consulter :</p>
+                        
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                            <a href="https://playbook24.github.io/playbook/" target="_blank" class="btn btn-outline-secondary fw-bold">
+                                <i class="fas fa-book-open me-2"></i>Playbook
+                            </a>
+                            <a href="https://playbook24.github.io/orbplaybook/" target="_blank" class="btn btn-outline-secondary fw-bold">
+                                <i class="fas fa-globe me-2"></i>OrbPlaybook
+                            </a>
+                        </div>
+                    </section>
                 </div>
+                
                 <div class="col-md-4 text-center mt-4 mt-md-0">
-                     <img src="assets/pp.png" alt="Photo de Flavien Augier" class="profile-picture">
+                     <img src="assets/pp.png" alt="Photo de Flavien Augier" class="profile-picture" loading="lazy">
                 </div>
             </div>
         </div>
     </main>
     
-    <footer class="container">
+    <footer class="container mt-5">
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/flavien-augier-6516b8357/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Flavi0x" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:augier.flavien2406@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/flavien-augier-6516b8357/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Flavi0x" target="_blank" aria-label="GitHub Personnel" title="GitHub (Flavi0x)"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/playbook24" target="_blank" aria-label="GitHub Playbook24" title="GitHub (Playbook24)"><i class="fab fa-github-alt"></i></a>
+            <a href="contact.html" aria-label="Contact" title="Me contacter via le formulaire"><i class="fas fa-envelope"></i></a>
         </div>
         <p class="mt-3">&copy; 2025 AUGIER Flavien. Tous droits réservés.</p>
     </footer>

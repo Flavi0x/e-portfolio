@@ -1,14 +1,14 @@
-/* --- Global Setup & Variables (Thème Sombre Gris-Noir) --- */
+/* --- Global Setup & Variables (Thème Sombre Gris-Noir par défaut) --- */
 :root {
     --font-title: 'Oswald', sans-serif;
     --font-body: 'Inter', sans-serif;
     --color-primary: #BFA98D;
-    /* Couleurs pour le thème sombre (modifiées pour un ton gris-noir) */
-    --color-secondary-dark: #f9fafb;     /* Texte des titres (presque blanc) */
-    --color-secondary-medium: #d1d5db; /* Texte principal (gris clair) */
-    --color-background: #121212;       /* Fond de la page (gris très sombre/presque noir) */
-    --color-surface: #1E1E1E;          /* Fond des cartes, nav, etc. (gris foncé) */
-    --color-border: #374151;           /* Couleur des bordures */
+    /* Couleurs pour le thème sombre */
+    --color-secondary-dark: #f9fafb;     
+    --color-secondary-medium: #d1d5db; 
+    --color-background: #121212;       
+    --color-surface: #1E1E1E;          
+    --color-border: #374151;           
     --border-radius-md: 8px;
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -21,7 +21,8 @@ body {
     color: var(--color-secondary-medium);
     margin: 0;
     box-sizing: border-box;
-    padding-top: 70px; /* Espace pour la navbar fixe */
+    padding-top: 70px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3 {
@@ -48,13 +49,13 @@ a:hover {
 .navbar {
     background-color: var(--color-surface) !important;
     box-shadow: var(--shadow-md);
+    transition: background-color 0.3s ease;
 }
 .navbar .navbar-brand {
     font-family: var(--font-title);
     color: var(--color-secondary-dark) !important;
     font-size: 1.2rem;
 }
-/* La classe navbar-dark gère la couleur des liens, mais on peut forcer */
 .navbar .nav-link {
     font-weight: bold;
     color: var(--color-secondary-medium) !important;
@@ -70,6 +71,7 @@ main#carte {
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
     padding: 2.5rem;
+    transition: background-color 0.3s ease;
 }
 
 /* --- Homepage Specific Styles --- */
@@ -79,6 +81,7 @@ main#carte {
     background-color: var(--color-surface);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
+    transition: background-color 0.3s ease;
 }
 .hero h1 {
     font-size: 3.5rem;
@@ -105,6 +108,11 @@ main#carte {
     border-radius: 50%;
     border: 5px solid var(--color-primary);
     box-shadow: var(--shadow-lg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px -5px rgba(191, 169, 141, 0.4);
 }
 
 /* --- Portfolio Card Styles --- */
@@ -121,7 +129,7 @@ main#carte {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .card:hover {
     transform: translateY(-8px);
@@ -162,7 +170,7 @@ main#carte {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1050; /* Au-dessus de la navbar Bootstrap */
+    z-index: 1050; 
     padding: 20px;
     box-sizing: border-box;
 }
@@ -203,13 +211,13 @@ footer {
 .btn-primary {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    color: #111827; /* Texte sombre pour un meilleur contraste sur le bouton doré */
+    color: #111827 !important; 
     font-weight: bold;
 }
 .btn-primary:hover {
-    background-color: #a99479; /* Doré un peu plus sombre au survol */
+    background-color: #a99479; 
     border-color: #a99479;
-    color: #111827;
+    color: #111827 !important;
 }
 .btn-outline-secondary {
     border-color: var(--color-primary);
@@ -218,28 +226,27 @@ footer {
 .btn-outline-secondary:hover {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    color: #111827; /* Texte sombre pour un meilleur contraste au survol */
+    color: #111827 !important; 
     font-weight: bold;
 }
-.btn-secondary { /* Pour le bouton Drive */
+.btn-secondary { 
     background-color: var(--color-border);
     border-color: var(--color-border);
     color: var(--color-secondary-dark);
 }
 .btn-secondary:hover {
-    background-color: #4b5563; /* Gris un peu plus foncé */
+    background-color: #4b5563; 
     border-color: #4b5563;
 }
+
 /* --- Styles pour la section Compétences --- */
 #skills .skill-icon {
     color: var(--color-primary);
     transition: transform 0.3s ease;
 }
-
 #skills .col-md-3:hover .skill-icon {
     transform: scale(1.2);
 }
-
 #skills h4 {
     color: var(--color-secondary-medium);
     font-family: var(--font-body);
@@ -247,35 +254,31 @@ footer {
     text-transform: none;
     letter-spacing: normal;
 }
-
 .bg-surface {
     background-color: var(--color-surface);
+    transition: background-color 0.3s ease;
 }
-
 
 /* --- Styles pour le formulaire de contact --- */
 .contact-form {
     max-width: 700px;
     margin: 0 auto;
 }
-
 .form-control {
     background-color: var(--color-border);
     border: 1px solid #4b5563;
     color: var(--color-secondary-dark);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
-
 .form-control:focus {
     background-color: var(--color-border);
     border-color: var(--color-primary);
     color: var(--color-secondary-dark);
     box-shadow: 0 0 0 0.25rem rgba(191, 169, 141, 0.25);
 }
-
 .form-label {
     color: var(--color-secondary-medium);
 }
-
 
 /* --- Styles pour les animations au défilement --- */
 .reveal {
@@ -283,8 +286,76 @@ footer {
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- Mode Clair (Light Mode) --- */
+[data-theme="light"] {
+    --color-background: #f9fafb;       /* Gris très clair */
+    --color-surface: #ffffff;          /* Blanc */
+    --color-secondary-dark: #111827;   /* Gris très foncé pour le texte */
+    --color-secondary-medium: #4b5563; /* Gris moyen pour le texte corps */
+    --color-border: #e5e7eb;           /* Bordure très claire */
+}
+
+/* On adapte la couleur de la navbar pour le mode clair */
+[data-theme="light"] .navbar .navbar-brand,
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3 {
+    color: var(--color-secondary-dark) !important;
+}
+[data-theme="light"] .navbar .nav-link,
+[data-theme="light"] .form-label {
+    color: var(--color-secondary-medium) !important;
+}
+[data-theme="light"] .navbar .nav-link:hover, 
+[data-theme="light"] .navbar .nav-link.active {
+    color: var(--color-primary) !important;
+}
+[data-theme="light"] .form-control {
+    background-color: #ffffff;
+    border-color: #d1d5db;
+}
+
+/* Bouton Light Mode */
+#theme-toggle:hover {
+    color: var(--color-primary) !important;
+}
+
+/* Amélioration du bouton secondaire sur fond clair/sombre */
+[data-theme="light"] .btn-outline-secondary {
+    color: var(--color-secondary-dark);
+    border-color: var(--color-secondary-dark);
+}
+[data-theme="light"] .btn-outline-secondary:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-surface) !important;
+}
+/* --- Styles pour la Modale Google Drive --- */
+.custom-modal {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.custom-modal-header {
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+}
+
+.custom-modal-footer {
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+}
+
+/* Gérer la couleur de la croix de fermeture (qui est noire par défaut sur Bootstrap) */
+.custom-close-btn {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Remettre la croix de fermeture en noir quand on est en mode clair */
+[data-theme="light"] .custom-close-btn {
+    filter: none;
 }

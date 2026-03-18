@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
 
-    // --- NOUVELLE LOGIQUE : Envoi du formulaire de contact via JS ---
+    // --- Logique : Envoi du formulaire de contact via JS ---
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -86,6 +86,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.innerHTML = "Oups ! Une erreur réseau s'est produite.";
                 statusDiv.style.color = '#dc3545';
             });
+        });
+    }
+
+    // --- Logique pour le Mode Sombre / Mode Clair ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    // Vérifier si l'utilisateur avait déjà choisi un thème
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    
+    if (savedTheme === 'light') {
+        body.setAttribute('data-theme', 'light');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                // Passage au mode sombre
+                body.removeAttribute('data-theme');
+                localStorage.setItem('portfolio-theme', 'dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                // Passage au mode clair
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('portfolio-theme', 'light');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
         });
     }
 });
