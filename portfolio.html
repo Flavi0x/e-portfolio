@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,128 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* --- Onglets Principaux --- */
+        .nav-pills .nav-link {
+            color: var(--color-secondary-medium);
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: bold;
+            margin: 0 5px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .nav-pills .nav-link:hover {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--color-primary) !important;
+            color: #111827 !important;
+            border-color: var(--color-primary);
+        }
+
+        /* --- Filtres AC --- */
+        .filter-btn {
+            border: 1px solid var(--color-primary);
+            color: var(--color-secondary-medium);
+            background: transparent;
+            padding: 6px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--color-primary);
+            color: #111827 !important;
+            font-weight: bold;
+        }
+
+        /* --- Cartes AC --- */
+        .ac-badge {
+            background-color: var(--color-primary);
+            color: #111827;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .ac-card-custom {
+            border-left: 4px solid var(--color-primary);
+            height: 100%;
+            background-color: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-right: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .btn-ac {
+            font-size: 0.8rem;
+            padding: 6px 0;
+            border: 1px solid var(--color-primary);
+            color: var(--color-primary);
+            background: transparent;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-weight: bold;
+            flex: 1;
+            text-align: center;
+        }
+        .btn-ac:hover {
+            background: var(--color-primary);
+            color: #111827;
+        }
+
+        /* --- Modals --- */
+        .modal-content {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-primary);
+            color: var(--color-secondary-dark);
+        }
+        .modal-header { border-bottom: 1px solid var(--color-border); }
+        .modal-footer { border-top: 1px solid var(--color-border); }
+
+        /* --- Section Points Forts / SAÉ --- */
+        .sae-container {
+            background-color: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid var(--color-border);
+        }
+        .tech-pill {
+            display: inline-block;
+            background-color: rgba(191, 169, 141, 0.1); 
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .sae-list li {
+            margin-bottom: 10px;
+            color: var(--color-secondary-dark);
+        }
+        .sae-list i {
+            color: var(--color-primary);
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
+    
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Flavien Augier</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
@@ -36,42 +152,655 @@
         </div>
     </nav>
         
-    <main class="container my-5">
-        <div class="reveal">
-            <h1 class="text-center mb-4">Mon Portfolio de Compétences</h1>
-            <p class="text-center lead mb-5" style="color: var(--color-secondary-medium);">Découvrez le détail de mes travaux et réalisations à travers mon tableau de suivi interactif.</p>
+    <main class="container my-5 pt-5">
+        <div class="reveal visible">
+            <h1 class="text-center mb-3 mt-4">Mon E-Portfolio</h1>
+            <p class="text-center lead mb-5" style="color: var(--color-secondary-medium);">Explorez la synthèse de mes compétences ou plongez dans le détail de mes projets phares.</p>
             
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="card portfolio-showcase border-0">
-                        <div class="card-body p-4 p-md-5 text-center">
-                            <h2 class="mb-4" style="border: none; color: var(--color-primary);">Tableau Principal & Réalisations</h2>
-                            <p class="mb-4" style="color: var(--color-secondary-medium); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-                                Naviguez directement dans mon espace interactif ci-dessous pour découvrir l'ensemble de mes preuves de compétences et projets universitaires (SAÉ).
-                                <em>Note : Les documents s'ouvriront dans un nouvel onglet pour vous offrir un meilleur confort de lecture.</em>
-                            </p>
-                            
-                            <div class="ratio ratio-16x9 rounded shadow-sm" style="border: 2px solid var(--color-primary); background-color: var(--color-surface); overflow: hidden;">
-                                <iframe src="https://drive.google.com/embeddedfolderview?id=1mlyVdexRjNzQ_b69XuofkhSf-lCaLAWB#grid" width="100%" height="100%" frameborder="0" loading="lazy" title="Gestionnaire Google Drive"></iframe>
+            <ul class="nav nav-pills justify-content-center mb-5" id="portfolioTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="ac-tab" data-bs-toggle="pill" data-bs-target="#tab-ac" type="button" role="tab">Apprentissages Critiques</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="sae-tab" data-bs-toggle="pill" data-bs-target="#tab-sae" type="button" role="tab">Mes Points Forts & SAÉ</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="portfolioTabsContent">
+                
+                <div class="tab-pane fade show active" id="tab-ac" role="tabpanel">
+                    
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                        <button class="filter-btn active" data-filter="all">Tous</button>
+                        <button class="filter-btn" data-filter="rt1">Administrer (RT1)</button>
+                        <button class="filter-btn" data-filter="rt2">Connecter (RT2)</button>
+                        <button class="filter-btn" data-filter="rt3">Programmer (RT3)</button>
+                        <button class="filter-btn" data-filter="rom">Parcours ROM</button>
+                    </div>
+
+                    <div class="row g-4" id="ac-grid">
+                        
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt1">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC21.01</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Configurer et dépanner le routage dynamique dans un réseau</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.01 & R3.02</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1JJ8Q4A5DpxATI98eWbCRRTr_kIBGlWk_lBV_Ev1P-g0/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1l1ZU-PImbe_hWMVIjs5yDZYHKGAFoydj3VBfwN963bc/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt1">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC21.02</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d’un réseau</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.01, SAE STAGE, SAE 3.03 & R4.01</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1mYazmnLQIyDNuUrIGGUBBPfEeDXxUx6KiEz8z6PQghw/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/13NCrYXhKN0pI48nuonDQdbkVgXN7016QgQe7Xtwcrz4/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt1">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC21.03</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.04</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1zMAgumEcupY8Ypj1SJSi_qz2FylvhdDG0UxoLBOZt9c/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1_OURNtJKoswuBjDIV2Yq2fEadZy7AVjLgvoF-lmu6u4/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt1">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC21.04</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Déployer des services réseaux avancés</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.03 & STAGE</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1pq8vj72aGIQ7Ql_ok6g4a81B2C4HRnGx4I_Cf60KfzU/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1nGoVfPQ6rq9VjO2FBz7yVmFvAZj643p7SHJ5ALaLDc8/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt1">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC21.05</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Identifier les réseaux opérateurs et l’architecture d’Internet</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.02</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/17CkLk7j4eX-LaR-SdSl_b7CB51M3bFAr9mnvpvmpdzg/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1JgISQJIUyxxgG4X4_bmkFr3ObU0ZpeWFJFE4vutncoc/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt1">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC21.06</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Travailler en équipe pour développer ses compétences professionnelles</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.11, R4.06, R3.12, R4.07, R3.13, R3.15 & SAE STAGE</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1fqPk93y3HAFA4Mz7_jPjkGYlDuBmjnHcWHi0QoZep70/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/12Vagfp55QK2Ql6CXs62JljksuzAvQfMbtRkBaJjTqO8/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt2">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC22.01</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Déployer et caractériser des systèmes de transmissions complexes </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.05 & R4.03</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1-2fE-2-fn0kRqeMepvXhJ5oTS_m5Jp4-bc6iJGOO6vA/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1DQUaHp1A6ArrtrzYeDdUeJTwMNoCVc91w0KF7S5fY78/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt2">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC22.02</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Mettre en place un accès distant sécurisé</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R4.01 (StormShield)</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1s0zBc_hlZhRauzBJmw6Bpy3zltMGPwohYc3LFax1Io8/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1phQZMAZ0ed-9bUyEEE55ZUZ9DjkM4ji9dVsdbXURyKQ/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt2">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC22.03</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Mettre en place une connexion multi-site via un réseau opérateur</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.02 & R4.10</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1TFw6ay_DiVBp59gAsQz3lxww0bqwnC-mNoZLSWPm8PM/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1_41aPGOTf6caXlfYzlamguiylMcRLcoE-N8upjTb848/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt2">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC22.04</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Administrer les réseaux d’accès des opérateurs </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.07 & R4.04</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1qIvDhqCGOsAhGpVnToUDk-JnMHUh-gSBF3Lor_lQXOI/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1woPMRgNcdr7MddDc2NMZaKhfA6u-r7tF7fSgstEVY3E/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt2">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC22.05</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Capacité à questionner un cahier des charges R&T</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> SAE 3.01, R3.15 & R4.10</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1oeg0P6wuQKIF8ViyZ4RRbLBUmK0NcWh1Ro0mrUCNmoc/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1xw9A_egElfYFzguuEmcqTqIElt64-p3oIrWFYpuODLI/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt3">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC23.01</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Automatiser l’administration système avec des scripts </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.08, 4.05 & SAE STAGE</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/11IjUFW0NLeK3iU_alsTuHwSlPP-lTI1ey-A5aw56AA8/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1mmB0jUYtB7kelsDti-gcFfH6E_XIUt6ATO1-bX6Dp9I/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt3">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC23.02</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Développer une application à partir d’un cahier des charges donné, pour le Web ou les périphériques mobiles</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.09, SAE E-Portfolio & Projet Web</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1wyxqVRTbyobom3ytysF_Tc-x6R0mLLtUKjbQRyKUMfs/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1kSgk75bo1TUIe4Dlrgta2SxKKYl500Y0M5cMkMADyW0/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt3">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC23.03</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);"> Utiliser un protocole réseau pour programmer une application client/serveur</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> SAE 3.02</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1K3Hi2U9-TFTR-AN7tkrebMTfmGBrQ7iEH48hLjB-J3c/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1AXkFEO_AZ_hJ1WMP9MUpc-eDlqAui3CMWDgCjO8iV6E/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt3">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC23.04</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Installer, administrer un système de gestion de données</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.10</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1Ob3xd70TFM5qjTw5mdye-wgFN_qTPG0DvxezbmPagVs/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1vqmkrQFff9A1mgVqtruN6dneZPvqgn4ff4S6amciAYQ/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rt3">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC23.05</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Accéder à un ensemble de données depuis une application et/ou un site web </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.10, R3.09 & SAE 3.02</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1OVjOSGgAM8HQnUQJxCameGlil7p-4CZvx4faECWbI44/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1T8pJqAA2lQOSU2nIUhe1QKrk4I0FSOXRehDTYbsEvjI/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC24.01ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Administrer les réseaux d’accès fixes et mobiles </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i>R3.07, 4.04 & R4.03</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1tegImfjoo_Fya4KlSofDmhaNq_X45qEfeGMHdRkLG60/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1JxHPioaGuwsjWgFolaof_VePLzF2WYt0Yce49rEuoE4/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC24.02ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Virtualiser des services réseaux</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.03 & R3.04</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1DC0C3SrsSLdl8bkbLpxyrbPDj1gc9wcMkEryG6OB5lU/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1bVkyS013k4F-9heXtLzGl0PQTMG2MbcZXcG4925gJzs/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC24.03ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Décrire/comprendre l’architecture et les offres des opérateurs </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.02 & R4.10</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1Y6HpUITrZiQKTBHCce07j2Ad1PfslYs-6CoYyvlrTs0/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1oWjxUl5NZxjAUea0SCWOLU1y_wEdtr38Zk2udWBvxWs/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC24.04ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Gérer le routage/commutation et les interconnexions</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.01, R3.02 & R4.10</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1de4S3emB3XUgvMwmfRJTe1MTFx8AVlLWDZMp70t_2Ng/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/19lqOix6ruUy9dFsLoxYo_b-pNFOYFwGPaeP2IWnhIuA/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC24.05ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Automatiser la gestion des équipements réseaux</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R4.05 & STAGE</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1HaGjJLB4KkQ2hq3_nIjn35Iiz02C5BUM_oTorrCRt9M/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1eM1AjRAxl-wpE53_Bs_zG1nhQoKCuxtXO_Zzo3v2Tn0/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC25.01ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Choisir une architecture et déployer des services de ToIP </h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.16</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1QOCBhbtS-e7Y4dXUfy480db0RFkv_H1bke9O6482SaE/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1LR-ljPoZzcU-EJ3MgYThUw9hSlRdWCxY-wIKDpcAvTw/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC25.02ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Administrer un service de téléphonie pour l’entreprise</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.16 & SAÉ 3.04</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="https://docs.google.com/document/d/1VBPHmJD0HONqyUTQFbDjfa9xxnZ-0tutg6MQh2ynqhQ/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1MlCuV2lotuKkC6gmoNm5boZ9SuAYjuL3L0snBYWDuUU/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 ac-item" data-category="rom">
+                            <div class="card ac-card-custom p-3">
+                                <span class="ac-badge mb-3 align-self-start">AC25.03ROM</span>
+                                <h3 class="mb-2" style="font-size: 1.1rem; border: none; color: var(--color-secondary-dark);">Mettre en place une politique de QoS pour les applications</h3>
+                                <p class="small" style="color: var(--color-secondary-medium);"><i class="fas fa-book" style="color: var(--color-primary);"></i> R3.16 & R3.01</p>
+                                <div class="d-flex gap-2 mt-auto pt-3">
+                                    <a href="http://docs.google.com/document/d/1Od9ZFc7JhaIb--otm3tUcazYoCSP2PyMS8PWKXYGFqc/edit?tab=t.0" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Preuve</a>
+                                    <a href="https://docs.google.com/document/d/1Cas8SB55Lwwsxek7Rarevz-tf1Pe_4rk3o30YFh0lpM/edit?usp=drive_link" target="_blank" class="btn-ac text-decoration-none" style="display: inline-block;">Analyse</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                </div>
+
+                <div class="tab-pane fade" id="tab-sae" role="tabpanel">
+                    <div class="row sae-container mx-0">
+                        
+                        <div class="col-lg-3 mb-4 mb-lg-0">
+                            <div class="nav flex-column nav-pills" id="sae-v-pills" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active text-start" data-bs-toggle="pill" data-bs-target="#sae-301" type="button">SAÉ 3.01 - IoT</button>
+                                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#sae-302" type="button">SAÉ 3.02 - Client/Serveur</button>
+                                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#sae-304" type="button">SAÉ 3.04 - ToIP</button>
+                                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#sae-401" type="button">R4.10 - Projet Opérateur</button>
+                                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#sae-stage" type="button">Stage en Entreprise</button>
+                                <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#sae-perso" type="button">Projets Personnels</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-9">
+<div class="tab-content text-start" id="sae-v-pillsContent">
+                                
+    <div class="tab-pane fade show active" id="sae-301">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">SAÉ 3.01 : Déploiement d'une infrastructure IoT</h2>
+        <div class="mb-4">
+            <span class="tech-pill">LoRaWAN</span>
+            <span class="tech-pill">MQTT</span>
+            <span class="tech-pill">Réseaux Capteurs</span>
+            <span class="tech-pill">Transmission Radio</span>
+            <span class="tech-pill">Cahier des charges</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-network-wired me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'objectif de cette SAÉ était de concevoir un réseau de capteurs connectés. Nous avons opté pour la technologie radio LoRaWAN pour sa longue portée et sa faible consommation d'énergie. J'ai configuré les passerelles (gateways) pour intercepter les signaux radio, puis j'ai géré le routage des messages vers un serveur applicatif via le protocole MQTT.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.01 : Déployer et caractériser des systèmes de transmissions complexes</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                J'ai pris en compte les réalités physiques des ondes radio : atténuation du signal, impact des facteurs d'étalement (Spreading Factors) sur la portée, et gestion de la taille des paquets pour optimiser la transmission.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.05 : Capacité à questionner un cahier des charges R&T</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Nous avons analysé les contraintes initiales pour faire des choix technologiques justifiés, notamment le compromis obligatoire entre la fréquence d'envoi des données et l'autonomie électrique des capteurs.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Ce projet m'a prouvé que la configuration logicielle ne suffit pas dans l'IoT : l'environnement physique (obstacles, placement des antennes) joue un rôle critique. J'ai appris à toujours vérifier la qualité de la liaison radio avant de chercher des erreurs de configuration réseau."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/SAE301.png" alt="Illustration SAÉ 3.01" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/SAE301.2.png" alt="Illustration 2 SAÉ 3.01" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="sae-302">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">SAÉ 3.02 : Création d'une application Client/Serveur</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Python Sockets</span>
+            <span class="tech-pill">TCP/IP</span>
+            <span class="tech-pill">Multithreading</span>
+            <span class="tech-pill">Sérialisation JSON</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-code me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'objectif était de programmer une architecture logicielle distribuée. Nous avons développé un script Serveur et un script Client capables de communiquer via le réseau. J'ai implémenté du multithreading côté serveur pour permettre la connexion de plusieurs clients simultanément, et utilisé le format JSON pour structurer les données échangées.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.03 : Utiliser un protocole réseau pour programmer une application client/serveur</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                J'ai utilisé l'API Sockets en Python pour gérer les connexions de la couche transport (OSI 4). Le choix du protocole TCP a permis de garantir l'intégrité et l'ordre des données transmises.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.05 : Accéder à un ensemble de données depuis une application et/ou un site web</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                J'ai mis en place la logique de sérialisation et désérialisation en encodant des dictionnaires Python en JSON, permettant au client de traiter des informations structurées plutôt que du texte brut.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Ce projet m'a permis de comprendre concrètement le fonctionnement des connexions réseau au niveau système. Gérer les threads et les exceptions liées aux déconnexions m'a imposé une grande rigueur dans l'écriture du code."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <img src="assets/SEE302.png" alt="Illustration SAÉ 3.02" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain;">
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="sae-304">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">SAÉ 3.04 : Ingénierie de la Téléphonie sur IP (ToIP)</h2>
+        <div class="mb-4">
+            <span class="tech-pill">IPBX (Asterisk/Wazo)</span>
+            <span class="tech-pill">Protocole SIP / RTP</span>
+            <span class="tech-pill">Trunk SIP & SDA</span>
+            <span class="tech-pill">VLAN Voice</span>
+            <span class="tech-pill">QoS (DSCP)</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-phone-alt me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'objectif de cette SAÉ était de déployer et d'administrer une infrastructure de téléphonie d'entreprise. J'ai installé un autocommutateur (IPBX), créé les comptes SIP utilisateurs et élaboré le plan de numérotation interne (Dialplan). J'ai ensuite configuré un Trunk SIP opérateur pour gérer l'interconnexion avec les réseaux publics (appels entrants et sortants). Enfin, pour protéger la qualité des appels, j'ai segmenté le trafic dans des VLANs Voix dédiés et mis en place une politique de Qualité de Service (QoS) sur les équipements réseaux.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC25.01ROM : Choisir une architecture et déployer des services de ToIP</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                J'ai configuré les bases du service vocal : analyse des requêtes de signalisation SIP, vérification du transport média (RTP) via des captures Wireshark, et programmation de la logique de routage interne des appels (messagerie, groupements).
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC25.02ROM : Administrer un service de téléphonie pour l’entreprise</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'administration avancée a consisté à configurer le routage des numéros externes (SDA) via le Trunk SIP et à auditer la consommation ainsi que la sécurité du serveur via l'analyse des journaux d'appels (CDR).
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC25.03ROM : Mettre en place une politique de QoS pour les applications</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Pour garantir des conversations sans latence ni hachures, j'ai implémenté des règles de QoS. J'ai marqué les paquets (DSCP EF) pour qu'ils soient traités avec une priorité stricte dans les files d'attente des routeurs en cas de congestion du réseau informatique.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "La voix sur IP est le service le plus exigeant en matière de qualité réseau : un téléchargement peut ralentir, mais une conversation téléphonique ne tolère ni la latence, ni la perte de paquets. Ce projet m'a fait réaliser que l'isolation des flux dans un VLAN dédié et l'application d'une QoS stricte ne sont pas de simples options d'optimisation, mais des prérequis absolus pour mettre en production un service de téléphonie professionnel."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/SAE304.png" alt="Illustration SAÉ 3.04" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/SAE304.2.png" alt="Illustration 2 SAÉ 3.04" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="sae-401">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">Projet Opérateur (R4.10) : Cœur Mobile 5G</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Free5GC</span>
+            <span class="tech-pill">UERANSIM</span>
+            <span class="tech-pill">Cahier des charges</span>
+            <span class="tech-pill">Architecture 5G (AMF/UPF)</span>
+            <span class="tech-pill">VMware vCenter</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-satellite-dish me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Le but de ce projet était de simuler une infrastructure 5G. Après avoir défini l'architecture et l'adressage IP dans un cahier des charges, nous avons utilisé UERANSIM pour simuler la partie accès (antenne gNodeB et équipement utilisateur). La partie cœur de réseau a été déployée avec la solution Free5GC sur des machines virtuelles hébergées sous vCenter. L'objectif final, que nous avons atteint, était de faire transiter un appel SIP à travers ce réseau mobile reconstitué.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.05 : Capacité à questionner un cahier des charges R&T</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                La planification en amont a été essentielle pour structurer l'allocation des ressources matérielles des VM et établir le plan de routage interne entre les fonctions du cœur (AMF, UPF).
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC24.01ROM : Administrer les réseaux d’accès fixes et mobiles</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                J'ai configuré les interfaces de liaison N2/N3 et géré l'authentification des abonnés, en appliquant concrètement la séparation entre le plan de signalisation et le transport des données utilisateurs (tunnels GTP).
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC24.02ROM : Virtualiser des services réseaux</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Le déploiement de Free5GC a nécessité l'installation de dépendances sous Ubuntu Server, la compilation de code, et la gestion des réseaux virtuels pour interconnecter la simulation locale au Datacenter.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Ce projet démontre que les réseaux cellulaires modernes reposent massivement sur la virtualisation logicielle (NFV). La phase de diagnostic réseau m'a permis de comprendre l'importance d'analyser méthodiquement les logs de chaque composant pour valider le processus d'attachement du terminal au réseau."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/R410.png" alt="Illustration R4.10" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/R410 (2).png" alt="Illustration 2 R4.10" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="sae-stage">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">Stage en Entreprise : Administration & Sécurisation</h2>
+        <div class="mb-4">
+            <span class="tech-pill">NTP / SNTP (Déployé)</span>
+            <span class="tech-pill">Debian Linux (À venir)</span>
+            <span class="tech-pill">SNMPv3 (À venir)</span>
+            <span class="tech-pill">Méthode AGDLP (À venir)</span>
+            <span class="tech-pill">Scripting & Cron (À venir)</span>
+        </div>
+        <div class="text-start">
+            <div class="mb-4">
+                <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-building me-2" style="color: var(--color-primary);"></i> 1. Contexte et avancement réel</h4>
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                    J'ai entamé un stage de 10 semaines en entreprise. À ce stade, j'ai validé ma première semaine sur l'infrastructure de production. Je me suis concentré sur la synchronisation temporelle en déployant et uniformisant le protocole NTP/SNTP sur le matériel réseau (commutateurs, onduleurs et interfaces de management iDRAC).
+                </p>
+            </div>
+            <div class="mb-4">
+                <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences et objectifs (AC)</h4>
+                <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;"><i class="fas fa-check-circle me-2" style="color: #22c55e;"></i> Ce que j'ai déjà réalisé (Semaine 1)</h5>
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                    <strong>AC21.04 (Déployer des services réseaux avancés) :</strong> J'ai configuré les clients NTP pour assurer la synchronisation de l'ensemble du parc matériel, étape indispensable pour garantir la cohérence des journaux d'événements (logs).
+                </p>
+                <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;"><i class="fas fa-hourglass-start me-2"></i> Ce qui est prévu pour les prochaines semaines</h5>
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                    <strong>AC24.05ROM & AC23.01 :</strong> Mes futures missions incluent la migration de la supervision vers SNMPv3, l'application de la méthode AGDLP sur les partages de fichiers, et la création de scripts d'automatisation sous Debian Linux.
+                </p>
+            </div>
+            <div class="mb-4">
+                <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse de cette première semaine</h4>
+                <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                    <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                        "Travailler directement sur des équipements en production exige une grande rigueur. Une erreur de configuration sur un commutateur ou une interface iDRAC peut avoir des conséquences immédiates. J'ai intégré l'importance de vérifier mes commandes et de communiquer systématiquement avec mon tuteur avant application."
+                    </p>
+                </div>
+            </div>
+            <div class="mt-4 row g-3 text-center">
+                <div class="col-md-6">
+                    <img src="assets/stage.png" alt="Illustration Stage" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/stage.2.png" alt="Illustration 2 Stage" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="tab-pane fade" id="sae-perso">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">Projet Personnel : Application Web OrbPlaybook</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Progressive Web App (PWA)</span>
+            <span class="tech-pill">Cahier des charges</span>
+            <span class="tech-pill">IndexedDB (Stockage local)</span>
+            <span class="tech-pill">Service Workers</span>
+            <span class="tech-pill">Généré par IA & Structuré à la main</span>
+        </div>
+        <div class="text-start">
+            <div class="mb-4">
+                <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-tools me-2" style="color: var(--color-primary);"></i> 1. Ce que j'ai fait concrètement</h4>
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                    J'ai développé l'application OrbPlaybook pour répondre à un besoin pratique : pouvoir tracer des systèmes de jeu sur un tableau virtuel interactif, y compris hors ligne. J'ai assumé l'utilisation d'assistants IA pour générer le code d'intégration Front-End (HTML/CSS/JS). Mon travail s'est focalisé sur la conception de l'architecture, la définition des spécifications, et l'implémentation de la base de données locale (IndexedDB) couplée aux Service Workers pour le mode hors connexion.
+                </p>
+            </div>
+            <div class="mb-4">
+                <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+                <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.05 : Capacité à questionner un cahier des charges R&T</h5>
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                    J'ai formalisé le besoin fonctionnel, anticipé la contrainte principale d'utilisation en zone blanche (sans réseau), et conçu l'architecture modulaire de l'application avant la phase de codage.
+                </p>
+                <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.05 : Accéder à un ensemble de données depuis une application et/ou un site web</h5>
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                    J'ai structuré la logique de stockage local avec IndexedDB. J'ai géré les transactions pour écrire, modifier et relire les schémas tactiques sauvegardés au format JSON de manière asynchrone.
+                </p>
+            </div>
+            <div class="mb-4">
+                <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+                <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                    <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                        "L'utilisation de l'IA pour générer du code nécessite de savoir exactement ce que l'on veut. Sans une architecture des données clairement définie en amont, le code généré est inexploitable. L'effort principal a été d'assembler correctement les briques logicielles et de fiabiliser la persistance des données."
+                    </p>
+                </div>
+            </div>
+            <div class="mt-4 row g-3 text-center">
+                <div class="col-md-6">
+                    <img src="assets/projet.png" alt="Illustration Projet Perso" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/projet (2).png" alt="Illustration 2 Projet Perso" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
-    
-    <footer class="container mt-5">
+
+    <footer class="container">
         <div class="social-links">
             <a href="https://www.linkedin.com/in/flavien-augier-6516b8357/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/Flavi0x" target="_blank" aria-label="GitHub Personnel" title="GitHub (Flavi0x)"><i class="fab fa-github"></i></a>
             <a href="https://github.com/playbook24" target="_blank" aria-label="GitHub Playbook24" title="GitHub (Playbook24)"><i class="fab fa-github-alt"></i></a>
             <a href="contact.html" aria-label="Contact" title="Me contacter via le formulaire"><i class="fas fa-envelope"></i></a>
         </div>
-        <p class="mt-3">&copy; 2025 AUGIER Flavien. Tous droits réservés.</p>
+        <p class="mt-3">&copy; 2026 AUGIER Flavien. Tous droits réservés.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const acItems = document.querySelectorAll('.ac-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    acItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block'; 
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

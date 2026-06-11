@@ -1,0 +1,264 @@
+﻿<div class="tab-content text-start" id="sae-v-pillsContent">
+                                
+    <div class="tab-pane fade show active" id="sae-301">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">SAÉ 3.01 : Déploiement d'une infrastructure IoT</h2>
+        <div class="mb-4">
+            <span class="tech-pill">LoRaWAN</span>
+            <span class="tech-pill">MQTT</span>
+            <span class="tech-pill">Réseaux Capteurs</span>
+            <span class="tech-pill">Transmission Radio</span>
+            <span class="tech-pill">Cahier des charges</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-network-wired me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'objectif de cette SAÉ était de monter un réseau de capteurs connectés complet. On est partis d'un besoin brut pour concevoir toute la chaîne de transmission. On a choisi d'utiliser la technologie radio LoRaWAN parce qu'on avait besoin d'une longue portée sans vider les batteries des capteurs en quelques jours. J'ai configuré les passerelles (gateways) pour qu'elles interceptent les signaux radio des objets, puis j'ai géré le routage des messages vers notre serveur applicatif en utilisant le protocole MQTT.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.01 : Déployer des systèmes de transmissions complexes</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Ce projet m'a confronté aux réalités des ondes radio. Il a fallu analyser l'atténuation du signal, comprendre comment le choix des Spreading Factors influençait la portée, et jongler avec la taille très limitée des paquets pour ne pas saturer la fréquence de transmission.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.05 : Questionner un cahier des charges R&T</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Pour répondre aux exigences, on a dû analyser les contraintes et faire des arbitrages techniques. J'ai appris à justifier pourquoi LoRaWAN était plus adapté que d'autres protocoles comme le Wi-Fi, en mettant en avant le compromis entre l'autonomie et le débit.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Sur papier, configurer l'interface logicielle semble suffisant pour que tout fonctionne. Mais sur le terrain, la physique reprend le dessus : un mur en béton ou un mauvais placement d'antenne change absolument tout. J'ai réalisé que dans l'IoT, le plus gros défi reste la gestion de l'environnement physique et de l'énergie. Depuis ce projet, avant de chercher un bug complexe dans mes configurations ou mon code, j'ai pris le réflexe de toujours vérifier la qualité du lien physique en premier."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/SAE301.png" alt="Illustration SAÉ 3.01" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/SAE301.2.png" alt="Illustration 2 SAÉ 3.01" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="sae-302">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">SAÉ 3.02 : Création d'une application Client/Serveur</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Python Sockets</span>
+            <span class="tech-pill">TCP/IP</span>
+            <span class="tech-pill">Multithreading</span>
+            <span class="tech-pill">Sérialisation JSON</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-code me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'objectif était de programmer une architecture logicielle distribuée de bout en bout. On a écrit un script Serveur qui écoute sur un port spécifique et un script Client capable de s'y connecter via le réseau. Pour que l'application soit utilisable par plusieurs personnes en même temps, j'ai implémenté du multithreading côté serveur. On a également structuré et encapsulé toutes les données échangées au format JSON.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.03 : Utiliser un protocole réseau pour programmer une application client/serveur</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                J'ai manipulé directement les fonctions de bas niveau de la couche transport (OSI 4) avec l'API Sockets en Python (les fonctions bind, listen, accept). Utiliser le protocole TCP était indispensable pour s'assurer que les données arrivent entières et dans le bon ordre sans pertes.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.05 : Accéder à un ensemble de données depuis une application</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Pour échanger des structures complexes, on ne pouvait pas envoyer du texte brut. J'ai mis en place une logique de sérialisation et désérialisation en encodant nos dictionnaires Python en UTF-8 et au format JSON, permettant au client de récupérer et d'afficher proprement les informations reçues.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analysis du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Développer pour le réseau demande d'anticiper l'imprévu. On s'aperçoit vite qu'un client peut se déconnecter brutalement ou que le lien peut sauter à tout moment. J'ai passé beaucoup de temps à blinder le code avec des blocs try/except pour éviter qu'une fermeture sauvage d'un client ne fasse planter tout le serveur. Gérer les threads en parallèle m'a demandé beaucoup de rigueur sur la synchronisation. Ce projet m'a permis de démystifier les connexions de bas niveau en arrière-plan."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <img src="assets/SEE302.png" alt="Illustration SAÉ 3.02" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain;">
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="sae-304">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">SAÉ 3.04 : Déploiement de Services d'Annuaires</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Active Directory (AD DS)</span>
+            <span class="tech-pill">Windows Server 2016</span>
+            <span class="tech-pill">GPO</span>
+            <span class="tech-pill">DNS</span>
+            <span class="tech-pill">Virtualisation</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-sitemap me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'objectif de cette SAÉ était de mettre en place la gestion centrale des utilisateurs et des postes d'une entreprise. J'ai installé le rôle Active Directory (AD DS) sur Windows Server 2016. J'ai structuré l'annuaire avec des Unités Organisationnelles (OU) pour organiser les comptes et les groupes. J'ai configuré les zones du serveur DNS nécessaires au domaine, et j'ai déployé des stratégies de groupe (GPO) pour standardiser l'environnement des postes clients et appliquer des règles de sécurité (complexité des mots de passe, restrictions d'accès).
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC21.04 : Déployer des services réseaux avancés</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Ce projet valide mes compétences en administration système Windows. Il a fallu assurer la cohérence entre le DNS et l'annuaire, gérer l'authentification des machines clientes, et organiser l'attribution des droits d'accès sur le domaine de manière centralisée.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC24.02ROM : Virtualiser des services réseaux</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Toute notre infrastructure tournait sur un hyperviseur. J'ai dû créer les différentes machines virtuelles (serveurs et clients), dimensionner l'allocation de la RAM et des vCPU par rapport aux ressources globales de l'hôte physique, et configurer des commutateurs virtuels (vSwitch) pour isoler nos flux de domaine.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "L'annuaire Active Directory est le cœur logique du réseau d'entreprise. Une simple mauvaise configuration DNS peut empêcher les utilisateurs d'ouvrir leur session le matin. Durant la configuration, j'ai fait l'erreur classique d'appliquer une GPO de restriction un peu trop large qui a fini par bloquer mes propres droits d'administrateur local. Ça m'a servi de leçon : maintenant, je teste systématiquement mes configurations de GPO sur une machine de test isolée avant de les appliquer sur l'ensemble de la production."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/SAE304.png" alt="Illustration SAÉ 3.04" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/SAE304.2.png" alt="Illustration 2 SAÉ 3.04" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="sae-401">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">Projet Opérateur (R4.10) : Cœur Mobile 5G</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Free5GC</span>
+            <span class="tech-pill">UERANSIM</span>
+            <span class="tech-pill">Cahier des charges</span>
+            <span class="tech-pill">Architecture 5G (AMF/UPF)</span>
+            <span class="tech-pill">VMware vCenter</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-satellite-dish me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Dans ce grand projet d'interconnexion, notre binôme s'est spécialisé sur la brique 'Cœur Mobile'. L'objectif était d'émuler une infrastructure 5G complète. On a rédigé un cahier des charges détaillé en amont pour caler notre architecture et notre plan d'adressage. Côté accès, on a utilisé UERANSIM pour simuler une antenne 5G (gNodeB) et un smartphone. Côté cœur, on a déployé la suite open-source Free5GC sur des machines virtuelles hébergées sur l'infrastructure VMware vCenter de l'IUT. On a dû interconnecter le plan de contrôle (AMF) et le plan utilisateur (UPF), enregistrer nos cartes SIM virtuelles, et valider l'ensemble en faisant transiter un appel via des clients SIP.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC22.05 : Questionner un cahier des charges R&T</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                On ne lance pas le déploiement d'une architecture NFV (Network Functions Virtualization) sans préparation. La rédaction du cahier des charges nous a obligés à formaliser l'allocation des ressources (CPU, RAM de l'hyperviseur) et à modéliser précisément le routage interne avant d'installer les briques.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC24.01ROM : Administrer les réseaux d’accès fixes et mobiles</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Ce projet a rendu concrets les concepts théoriques des réseaux mobiles. J'ai configuré les liaisons N2 et N3 reliant le gNodeB au cœur, géré l'attachement des terminaux et l'authentification cryptographique des abonnés, en manipulant la séparation des flux de signalisation et de données (GTP tunnels).
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC24.02ROM : Virtualiser des services réseaux</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                L'intégralité de Free5GC reposait sur des serveurs virtuels Linux Ubuntu. Il a fallu installer l'environnement (Go, MongoDB), compiler le code source des différentes fonctions réseau, et configurer les cartes réseaux virtuelles pour interconnecter nos PC locaux simulant les antennes avec les VM hébergées sur le vCenter.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Ce projet m'a fait réaliser que la 5G moderne s'apparente à un grand réseau informatique virtualisé. Le plus difficile a été la phase de diagnostic réseau (TSHOOT) : au début, notre smartphone virtuel refusait de s'enregistrer à cause d'un décalage mineur d'adresses réseau et d'interfaces mal mappées sur l'AMF. Analyser les captures de paquets, corriger les fichiers de configuration un par un, et réussir à voir le terminal s'attacher pour passer un appel vidéo fluide à travers notre propre cœur a été très formateur."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/R410.png" alt="Illustration R4.10" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/R410 (2).png" alt="Illustration 2 R4.10" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="sae-stage">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">Stage de fin d'études : Administration & Automatisation</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Debian Linux</span>
+            <span class="tech-pill">SNMPv3</span>
+            <span class="tech-pill">NTP / SNTP</span>
+            <span class="tech-pill">Méthode AGDLP</span>
+            <span class="tech-pill">Scripting & Cron</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-building me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Pendant mes 10 semaines de stage, rythmées par mes trajets quotidiens en train entre Roanne et Feurs, j'ai travaillé directement sur une infrastructure de production. Mes tâches principales consistaient à sécuriser les accès et à standardiser la configuration des équipements. J'ai configuré et généralisé le protocole SNMPv3 (sécurisé et chiffré) pour remplacer l'ancienne version SNMPv2 sur l'ensemble du parc de supervision. J'ai configuré la synchronisation temporelle NTP/SNTP sur les commutateurs, les onduleurs et les cartes de management iDRAC. J'ai aussi réorganisé les permissions des partages de fichiers Windows en appliquant la méthode AGDLP, et écrit des scripts de maintenance planifiés via cron sous Debian Linux.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC24.05ROM : Automatiser la gestion des équipements réseaux</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Quand on doit déployer une configuration SNMPv3 ou modifier des paramètres locaux sur des dizaines de switchs de production, l'exécution manuelle prend trop de temps et génère des erreurs. J'ai utilisé des scripts pour pousser ces configurations de manière industrielle et garantir un parc homogène.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.01 : Automatiser l’administration système avec des scripts</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Mes scripts d'administration système sous Debian Linux devaient tourner de nuit de façon totalement autonome. J'ai dû coder proprement en gérant les exceptions et, surtout, en mettant en place une redirection systématique des flux vers des fichiers de logs dédiés pour vérifier le bon déroulement des tâches au matin.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Le stage m'a confronté aux exigences de la production. En TP, une erreur de configuration se corrige en redémarrant l'équipement. En entreprise, si un script bloque une interface iDRAC ou coupe un accès de management à distance, cela peut impacter l'activité. Cela m'a poussé à gagner en maturité : j'ai appris à valider systématiquement mes scripts sur des machines isolées de test (sandbox) et à documenter mes interventions avant de toucher aux serveurs réels."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/stage.png" alt="Illustration Stage" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/stage.2.png" alt="Illustration 2 Stage" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="sae-perso">
+        <h2 style="color: var(--color-primary); border:none;" class="mb-3">Projet Personnel : Application Web Tactique OrbPlaybook</h2>
+        <div class="mb-4">
+            <span class="tech-pill">Progressive Web App (PWA)</span>
+            <span class="tech-pill">JavaScript ES6 Modules</span>
+            <span class="tech-pill">Service Workers (Offline mode)</span>
+            <span class="tech-pill">HTML5 Canvas API</span>
+            <span class="tech-pill">IndexedDB Storage</span>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-basketball-ball me-2" style="color: var(--color-primary);"></i> 1. Ce qu'on a fait concrètement</h4>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                En dehors de mes études, j'ai combiné mon cursus informatique avec mon implication dans le basket à l'US Lentigny en développant l'application <strong>OrbPlaybook</strong>. C'est une Progressive Web App (PWA) codée de A à Z en JavaScript Vanilla, qui permet aux entraîneurs de dessiner et d'animer des systèmes de jeu sur un terrain virtuel interactif via l'API HTML5 Canvas. L'application intègre également une gestion d'effectif et de calendrier. Pour répondre aux contraintes réelles des gymnases où le réseau mobile est souvent inexistant, j'ai configuré un Service Worker (`sw.js`) pour gérer la mise en cache des fichiers et implémenté IndexedDB pour stocker localement et de façon persistante les données tactiques en mode déconnecté.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-layer-group me-2" style="color: var(--color-primary);"></i> 2. Les compétences validées</h4>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.02 : Développer une application Web/Mobile</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Ce projet illustre mes compétences en développement Front-End. Sans utiliser de frameworks, j'ai structuré l'application avec des modules JavaScript ES6 natifs, développé la logique d'animation sur le Canvas, et géré l'adaptation de l'interface (Responsive Design) pour qu'elle soit parfaitement exploitable sur tablette au bord du terrain.
+            </p>
+            <h5 style="color: var(--color-primary); font-size: 1rem; margin-top: 15px;">AC23.05 : Accéder à des données depuis une application</h5>
+            <p style="color: var(--color-secondary-medium); font-size: 0.95rem; line-height: 1.6;">
+                Assurer la persistance des systèmes de jeu en local exige une couche d'accès aux données optimisée. J'ai écrit la logique d'interaction avec IndexedDB (`core/db.js`), en gérant les transactions asynchrones pour stocker et relire nos objets de schémas au format JSON sans bloquer l'affichage utilisateur.
+            </p>
+        </div>
+        <div class="mb-4">
+            <h4 style="color: var(--color-secondary-dark); font-size: 1.15rem;"><i class="fas fa-comment-dots me-2" style="color: var(--color-primary);"></i> 3. Mon analyse du projet</h4>
+            <div style="background-color: rgba(255,255,255,0.02); border-left: 3px solid var(--color-primary); padding: 15px; border-radius: 0 8px 8px 0;">
+                <p style="color: var(--color-secondary-medium); font-size: 0.95rem; font-style: italic; margin: 0;">
+                    "Développer un projet de cette taille en totale autonomie m'a forcé à être très rigoureux sur la structure. Quand le code grandit, une architecture modulaire propre est essentielle pour ne pas se perdre. Gérer le cycle de vie du Service Worker et le stockage hors-ligne a été le point le plus complexe, mais cela m'a appris à chercher dans la documentation technique et à tester mes idées directement. Ce projet me prouve que je sais monter en compétences sur des outils complexes pour répondre à un besoin pratique."
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 row g-3 text-center">
+            <div class="col-md-6">
+                <img src="assets/projet.png" alt="Illustration Projet Perso" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+            <div class="col-md-6">
+                <img src="assets/projet (2).png" alt="Illustration 2 Projet Perso" class="img-fluid rounded shadow" style="border: 1px solid var(--color-border); max-height: 400px; object-fit: contain; width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
